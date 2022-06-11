@@ -10,10 +10,11 @@ def find(i, is_connected, assigned_to, tried):
 
 def hungarian(is_connected):
     n = len(is_connected)
-    assigned_to = [- 1] * n
+    m = len(is_connected[0])
+    assigned_to = [- 1] * m
     count = 0
     for i in range(n):
-        tried = [False] * n
+        tried = [False] * m
         if find(i, is_connected, assigned_to, tried):
             count += 1
     return count
